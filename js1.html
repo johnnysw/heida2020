@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // js是一种弱类型的语言
+        // js中有两种数据类型：
+        // 1. 基本类型：number，string，boolean，undefined，null
+        // 2. 引用类型：object
+
+        // var(variable)：变量
+        var a = 5; //number
+        var b = 3.5; //nuber
+        var c = "abc"; //string
+        var d = true; //boolean
+
+        var e;
+
+        console.log(e); //undefined：未定义
+
+        // console.log(f); //not defined错误
+
+        var g = null;
+        console.log(g); //null：空
+
+        fn1();
+        // 函数声明
+        // 使用函数声明方式创建的函数是要【函数提升】的
+        function fn1() {
+            console.log('这是一个函数...');
+        }
+
+        // 函数表达式
+        var fn2 = function () {
+            console.log('这又是一个函数...');
+        };
+        fn2();
+
+        function test(name, age) {
+            // console.log(name, age);
+            return 'My name is ' + name + ", age is " + age;
+        }
+        var aa = test('lisi', 23);
+        console.log(aa);
+
+        // 引用类型：object
+        // object: everything is object，万物皆对象
+        // 只要你想研究它，关心它，它就是一个对象，不管它是具体的事物，还是抽象的事物
+        // 面向对象（object - oriented）
+        // OOA(analysis)
+        // OOD(design)
+        // OOP(programming)
+        // 案例分析：人到图书馆借书
+        // 人
+        // 属性：姓名、身份证
+        // 方法：
+        // 书
+        // 属性：书名、ISBN 
+        // 方法：
+        // 图书馆
+        // 属性：馆名、地址
+        // 方法：
+        // 管理员
+        // 属性：
+        // 方法：登记()
+
+        // 创建对象
+        // 1. new Object()
+        var o1 = new Object();
+        o1.name = "lisi";
+        o1.age = 23;
+        o1.sayHello = function () {
+            console.log(this.name);
+        };
+
+        console.log(o1.name);
+        o1.sayHello();
+
+        // 2. 对象直接量
+        var o2 = {
+            name: 'lisi',
+            age: 23,
+            sayHello: function () {
+                console.log(this.name);
+            }
+        };
+
+        // 3. 类
+        // 类的定义：具有相同的属性和方法的对象的集合
+        // js它是一种基于对象的语言，但是从es6这个版本之后，js对类的概念支持的很好了
+        /* class Person{
+            constructor(n, age){
+                this.name = n;
+                this.age = age;
+            }
+        }
+
+        var p1 = new Person('lisi', 23);
+        var p2 = new Person('wangwu', 34);
+
+        console.log(p1.name, p1.age); */
+
+        /* var fn = function () {
+            console.log(this.name);
+        }; */
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            // this.sayHello = fn;
+        }
+        Person.prototype.sayHello = function () {
+            console.log(this.name);
+        };
+
+        var p1 = new Person('lisi', 23);
+        var p2 = new Person('wangwu', 23);
+
+        console.log(p1.name, p1.age);
+        p1.sayHello();
+
+        // js中对象分类：
+        // 1. 自定义对象
+        // 2. 内置对象
+        // 3. ***DOM对象***
+
+        // 模拟人到图书馆的例子
+        /* var person = {
+            name: 'lisi',
+            idCard: '123456789'
+        }; */
+
+        function Person2(name, idCard) {
+            this.name = name;
+            this.idCard = idCard;
+        }
+
+        var person1 = new Person2('lisi', "1234567");
+        var person2 = new Person2('wangwu', "0987654");
+
+        var book = {
+            name: '大学英语四级',
+            ISBN: '2345678'
+        };
+
+        var library = {
+            name: '学府书店',
+            address: '学府路。。。'
+        };
+
+        var manager = {
+            regist: function(person, book){
+                console.log("人名：" + person.name + ", 书名：" + book.name);
+            }
+        };
+
+        manager.regist(person2, book);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

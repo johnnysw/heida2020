@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* var a = 5;
+        var b = "abc";
+        var c = true;
+
+        var o1 = new Object();
+        o1.name = 'lisi';
+        o1.age = 23; */
+
+        // 值传递 or 引用传递
+        /* var a = 5;
+        var b = a;//值传递
+        a = 6;
+        console.log(b);
+
+        var o1 = {name: 'lisi'};
+        var o2 = o1;//引用传递？
+        o2.name = 'wangwu';
+        console.log(o1.name); */
+
+       /*  var a = 5;
+        var o1 = {name: 'lisi'};
+
+        function test(x){
+            x.name = 'wangwu';
+            console.log(x.name);
+        }
+        test(o1);
+        console.log(o1.name); */
+
+        /* var o1 = {name: 'lisi'};
+        var o2 = {name: 'lisi'};
+        console.log(o1 == o2); */
+
+        /* var fn1 = function () {
+            console.log('这是一个函数...');
+        };
+
+        var fn2 = new Function("console.log('haha');");//函数对象
+        fn2(); */
+
+        /* function test(a){
+            a(function(c){
+                c();
+            });
+        }
+        test(function(b){
+            b(function(){
+                console.log('hehe');
+            });
+        }); */
+
+        function test(){
+            return function(x){
+                console.log(x);
+            };
+        }
+        test()("lisi");
+        
+
+        // 以上代码展示了Js的函数的【函数式编程】的能力（特性）
+        // 编程范式
+        // 1. 面向过程编程
+        // 2. 面向对象编程
+        // 3. 泛型编程：typescript
+        // 4. 函数式编程
+        // 5. 可微分编程
+
+
+
+    </script>
+</body>
+</html>
